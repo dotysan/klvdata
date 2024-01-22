@@ -168,6 +168,3 @@ texinfo_documents = [
      author, 'klv-data', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-

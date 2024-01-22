@@ -69,4 +69,3 @@ class KLVParser(object):
             return data
         else:
             raise StopIteration
-
