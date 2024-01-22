@@ -35,7 +35,7 @@ from klvdata.common import datetime_to_bytes
 from klvdata.common import float_to_bytes
 from klvdata.common import str_to_bytes
 from klvdata.common import ieee754_bytes_to_fp
-                                           
+
 
 
 class ElementParser(Element, metaclass=ABCMeta):

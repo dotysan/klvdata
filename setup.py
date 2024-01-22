@@ -34,7 +34,7 @@ setup(
     # Author details
     author='paretech',
     author_email="paretech@gmail.com",
-    
+
     # License details
     license='MIT',
 

@@ -44,7 +44,7 @@ First:
 .. code-block:: console
 
     $ pip3 install klvdata
-    
+
     $ wget https://raw.githubusercontent.com/paretech/klvdata/master/data/DynamicConstantMISMMSPacketData.bin
 
     $ cat << EOF > klvdata_test.py

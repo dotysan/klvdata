@@ -266,7 +266,7 @@ class SensorRelativeAzimuthAngle(IEEE754ElementParser):
     _range = (0, 360)
     units = 'degrees'
 
-@UAVBasicUniversalMetadataSet.add_parser 
+@UAVBasicUniversalMetadataSet.add_parser
 class SensorRelativeElevationAngle(IEEE754ElementParser):
     key = hexstr_to_bytes("06 0e 2b 34 01 01 01 01 07 01 10 01 03 00 00 00")
     TAG = 19
@@ -277,8 +277,8 @@ class SensorRelativeElevationAngle(IEEE754ElementParser):
     _domain = (-(2 ** 31 - 1), 2 ** 31 - 1)
     _range = (-180, 180)
     units = 'degrees'
-    
-@UAVBasicUniversalMetadataSet.add_parser                                        
+
+@UAVBasicUniversalMetadataSet.add_parser
 class SlantRange(IEEE754ElementParser):
     key = hexstr_to_bytes("06 0E 2B 34 01 01 01 01 07 01 08 01 01 00 00 00")
     TAG = 21

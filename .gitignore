@@ -61,8 +61,8 @@ instance/
 .scrapy
 
 # VirtualEnv stuff:
-.Python 
-[Bb]in 
+.Python
+[Bb]in
 [Ii]nclude
 [Ll]ib
 [Ll]ib64
@@ -94,7 +94,7 @@ celerybeat-schedule
 # Environments
 .env
 .envrc
-.venv
+.venv*
 env/
 venv/
 ENV/
