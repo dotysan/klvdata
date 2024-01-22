@@ -1,0 +1,44 @@
+# https://github.com/pre-commit/pre-commit/blob/main/.pre-commit-config.yaml
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      # - id: trailing-whitespace
+      # - id: end-of-file-fixer
+      # - id: check-yaml
+      # - id: debug-statements
+
+      # - id: double-quote-string-fixer
+      # - id: name-tests-test
+      # - id: requirements-txt-fixer
+
+  # - repo: https://github.com/PyCQA/isort
+  #   rev: 5.13.2
+  #   hooks:
+  #     - id: isort
+  #       name: isort (python)
+
+  # TODO: we need to tune black before enabling
+  # - repo: https://github.com/psf/black
+  #   rev: 23.12.1
+  #   hooks:
+  #     - id: black
+  # name: isort (python)
+
+  # TODO: autopep8 instead of black?
+
+  # - repo: https://github.com/pyCQA/flake8
+  #   rev: 6.1.0
+  #   hooks:
+  #     - id: flake8
+  #       name: flake8 (python)
+
+  # this requires GITGUARDIAN_API_KEY env
+  - repo: https://github.com/gitguardian/ggshield
+    rev: v1.23.0
+    hooks:
+      - id: ggshield
+        language_version: python3
+        stages: [commit]
