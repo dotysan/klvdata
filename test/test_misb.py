@@ -118,6 +118,7 @@ class ParserSingleShort(unittest.TestCase):
     #
     #     # print(ST0601(value).items)
 
+
 if __name__ == '__main__':
     unittest.main()
 

@@ -872,6 +872,7 @@ class WeaponLoad(MappedElementParser):
     _range = (0, 2**16-1)
     _error = None
 
+
 @UASLocalMetadataSet.add_parser
 class WeaponFired(MappedElementParser):
     key = b'\x3D'
@@ -897,6 +898,7 @@ class LaserPRFCode(MappedElementParser):
     _range = (0, 65535)
     _error = None
 
+
 @UASLocalMetadataSet.add_parser
 class SensorFieldOfViewName(MappedElementParser):
     key = b'\x3F'
@@ -908,6 +910,7 @@ class SensorFieldOfViewName(MappedElementParser):
     _domain = (0, 2**8-1)
     _range = (0, 2**8-1)
     _error = None
+
 
 @UASLocalMetadataSet.add_parser
 class PlatformMagneticHeading(MappedElementParser):
@@ -1291,7 +1294,7 @@ class PlatformSideslipAngleFull(MappedElementParser):
     units = 'degrees'
 
 
-#@UASLocalMetadataSet.add_parser
+# @UASLocalMetadataSet.add_parser
 # class MIISCoreIdentifier(StringElementParser):
 #     key = b'\x5E'
 #     TAG = 94
@@ -1301,7 +1304,7 @@ class PlatformSideslipAngleFull(MappedElementParser):
 #     UDSName = "Motion Imagery Identification System Core"
 
 
-#@UASLocalMetadataSet.add_parser
+# @UASLocalMetadataSet.add_parser
 # class SARMotionImageryLocalSet(StringElementParser):
 #     key = b'\x5F'
 #     TAG = 95
@@ -1337,6 +1340,7 @@ class DensityAltitudeExtended(MappedElementParser):
     _range = (-900, 40000)
     _error = None
     units = 'meters'
+
 
 @UASLocalMetadataSet.add_parser
 class SensorEllipsoidHeightExtended(MappedElementParser):

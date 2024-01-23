@@ -37,7 +37,6 @@ from klvdata.common import str_to_bytes
 from klvdata.common import ieee754_bytes_to_fp
 
 
-
 class ElementParser(Element, metaclass=ABCMeta):
     """Construct a Element Parser base class.
 
@@ -153,6 +152,7 @@ class MappedElementParser(ElementParser, metaclass=ABCMeta):
     def _error(cls):
         pass
 
+
 class MappedValue(BaseValue):
     def __init__(self, value, _domain, _range, _error):
         self._domain = _domain
@@ -175,6 +175,7 @@ class MappedValue(BaseValue):
     def __float__(self):
         return self.value
 
+
 class IEEE754ElementParser(ElementParser, metaclass=ABCMeta):
     def __init__(self, value):
         super().__init__(IEEE754Value(value))
@@ -188,7 +189,7 @@ class IEEE754Value(BaseValue):
             self.value = value
 
     def __bytes__(self):
-        #TODO
+        # TODO
         return ieee754_double_to_bytes(self.value)
 
     def __str__(self):

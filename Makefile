@@ -1,6 +1,6 @@
 SHELL:= /usr/bin/env bash
 NOW:= $(shell date -Is)
-PY:= python3.12
+PY:= python3.11
 vb:= .venv/bin/
 
 .PHONY: env clean really-clean

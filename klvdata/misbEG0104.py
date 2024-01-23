@@ -33,8 +33,6 @@ from klvdata.setparser import SetParser
 from klvdata.streamparser import StreamParser
 
 
-
-
 class UnknownElement(UnknownElement):
     pass
 
@@ -45,7 +43,7 @@ class UAVBasicUniversalMetadataSet(SetParser):
     http://www.gwg.nga.mil/misb/docs/eg/EG0104.4.pdf
     """
 
-    #key = hexstr_to_bytes('06 0E 2B 34 - 01 01 01 01 – 02 01 03 00 - 00 00 00 00')
+    # key = hexstr_to_bytes('06 0E 2B 34 - 01 01 01 01 – 02 01 03 00 - 00 00 00 00')
     key = hexstr_to_bytes('06 0E 2B 34 - 02 01 01 01 – 0E 01 01 02 - 01 01 00 00')
     name = 'UAV Basic Universal Metadata Set'
     key_length = 16
@@ -123,6 +121,7 @@ class PlatformRollAngle(IEEE754ElementParser):
     _range = (-50, 50)
     units = 'degrees'
 
+
 @UAVBasicUniversalMetadataSet.add_parser
 class PlatformDesignation(StringElementParser):
     key = hexstr_to_bytes("06 0E 2B 34 01 01 01 01 01 01 20 01 00 00 00 00")
@@ -155,6 +154,7 @@ class ImageCoordinateSystem(StringElementParser):
     UDSName = "Image Coordinate System"
     min_length, max_length = 0, 127
 
+
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorLatitude(IEEE754ElementParser):
     key = hexstr_to_bytes("06 0E 2B 34 01 01 01 01 07 01 02 01 02 04 00 00")
@@ -180,7 +180,9 @@ class SensorLatitude1(IEEE754ElementParser):
     _range = (-90, 90)
     units = 'degrees'
 
-#the key is wrong, comes from 1.klv
+# the key is wrong, comes from 1.klv
+
+
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorLatitude2(IEEE754ElementParser):
     key = hexstr_to_bytes("06 0E 01 01 01 03 07 01 02 01 02 04 02 00")
@@ -192,6 +194,7 @@ class SensorLatitude2(IEEE754ElementParser):
     _domain = (-(2**63-1), 2**63-1)
     _range = (-90, 90)
     units = 'degrees'
+
 
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorLongitude(IEEE754ElementParser):
@@ -205,6 +208,7 @@ class SensorLongitude(IEEE754ElementParser):
     _range = (-180, 180)
     units = 'degrees'
 
+
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorLongitude1(IEEE754ElementParser):
     key = hexstr_to_bytes("06 0E 2B 34 01 01 01 01 07 01 02 01 02 06 02 00")
@@ -216,6 +220,7 @@ class SensorLongitude1(IEEE754ElementParser):
     _domain = (-(2**63-1), 2**63-1)
     _range = (-180, 180)
     units = 'degrees'
+
 
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorTrueAltitude(IEEE754ElementParser):
@@ -242,6 +247,7 @@ class SensorHorizontalFieldOfView(IEEE754ElementParser):
     _range = (0, 180)
     units = 'degrees'
 
+
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorVerticalFieldOfView(IEEE754ElementParser):
     key = hexstr_to_bytes("06 0e 2b 34 01 01 01 07 04 20 02 01 01 0a 01 00")
@@ -253,6 +259,7 @@ class SensorVerticalFieldOfView(IEEE754ElementParser):
     _domain = (0, 2 ** 16 - 1)
     _range = (0, 180)
     units = 'degrees'
+
 
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorRelativeAzimuthAngle(IEEE754ElementParser):
@@ -266,6 +273,7 @@ class SensorRelativeAzimuthAngle(IEEE754ElementParser):
     _range = (0, 360)
     units = 'degrees'
 
+
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorRelativeElevationAngle(IEEE754ElementParser):
     key = hexstr_to_bytes("06 0e 2b 34 01 01 01 01 07 01 10 01 03 00 00 00")
@@ -277,6 +285,7 @@ class SensorRelativeElevationAngle(IEEE754ElementParser):
     _domain = (-(2 ** 31 - 1), 2 ** 31 - 1)
     _range = (-180, 180)
     units = 'degrees'
+
 
 @UAVBasicUniversalMetadataSet.add_parser
 class SlantRange(IEEE754ElementParser):
@@ -443,6 +452,7 @@ class StartDateTime(StringElementParser):
     UDSName = "Start Date Time - UTC"
     min_length, max_length = 0, 127
 
+
 @UAVBasicUniversalMetadataSet.add_parser
 class EventStartTime(DateTimeElementParser):
     key = hexstr_to_bytes("06 0E 2B 34 01 01 01 01 07 02 01 02 07 01 00 00")
@@ -451,6 +461,7 @@ class EventStartTime(DateTimeElementParser):
     LDSName = "Event Start Time - UTC"
     ESDName = "Mission Start Time, Date, and Date of Collection"
     UDSName = "Event Start Date Time - UTC"
+
 
 @UAVBasicUniversalMetadataSet.add_parser
 class RVTLocalSet(StringElementParser):
@@ -646,6 +657,7 @@ class DensityAltitudeExtended(IEEE754ElementParser):
     _domain = (0, 2**16-1)
     _range = (-900, 40000)
     units = 'meters'
+
 
 @UAVBasicUniversalMetadataSet.add_parser
 class SensorEllipsoidHeightExtended(IEEE754ElementParser):

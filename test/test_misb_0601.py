@@ -638,7 +638,6 @@ class ParserSingleShort(unittest.TestCase):
         self.assertEqual(bytes(PlatformMagneticHeading(example_value)), example_ls_packet)
         self.assertEqual(bytes(PlatformMagneticHeading(example_ls_packet[2:])), example_ls_packet)
 
-
     def test_UASLSVersionNumber(self):
         # Example value and packet per MISB ST 0601.11, Section 8 "Conversions and Mappings of Metadata Types".
         example_value = 232
