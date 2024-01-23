@@ -13,12 +13,13 @@ jobs:
 
 #----------------------------------------------------------------------
   tests:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     strategy:
       # don't fail Python X if Python Y craps the bed
       fail-fast: false
       matrix:
         python-version:
+          - "3.6"
           - "3.7"
           - "3.8"
           - "3.9"
