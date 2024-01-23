@@ -32,11 +32,11 @@ repos:
     hooks:
       - id: autopep8
 
-  # - repo: https://github.com/pyCQA/flake8
-  #   rev: 6.1.0
-  #   hooks:
-  #     - id: flake8
-  #       name: flake8 (python)
+  - repo: https://github.com/pyCQA/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        name: flake8 (python)
 
   # this requires GITGUARDIAN_API_KEY env
   - repo: https://github.com/gitguardian/ggshield

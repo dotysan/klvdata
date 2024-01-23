@@ -27,7 +27,6 @@ from struct import pack
 from struct import unpack
 from datetime import datetime
 from datetime import timezone
-from binascii import hexlify, unhexlify
 
 
 def datetime_to_bytes(value):
@@ -138,10 +137,10 @@ def bytes_to_float(value, _domain, _range, _error=None):
 def ieee754_bytes_to_fp(value):
     """Convert the fixed point value self.value to a ieee754 double point value."""
     # src_value = int().from_bytes(value, byteorder='big', signed=False)
-    l = len(value)
-    if l == 4:
+    valen = len(value)
+    if valen == 4:
         return unpack('>f', value)[0]
-    elif l == 8:
+    elif valen == 8:
         return unpack('>d', value)[0]
     else:
         raise ValueError

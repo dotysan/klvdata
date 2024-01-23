@@ -25,7 +25,6 @@
 
 from klvdata.common import hexstr_to_bytes
 from klvdata.element import UnknownElement
-from klvdata.elementparser import BytesElementParser
 from klvdata.elementparser import DateTimeElementParser
 from klvdata.elementparser import StringElementParser
 from klvdata.elementparser import IEEE754ElementParser

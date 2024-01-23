@@ -27,7 +27,6 @@ from abc import ABCMeta
 from abc import abstractmethod
 from klvdata.element import Element
 from klvdata.common import bytes_to_datetime
-from klvdata.common import bytes_to_int
 from klvdata.common import bytes_to_float
 from klvdata.common import bytes_to_hexstr
 from klvdata.common import bytes_to_str
@@ -188,9 +187,9 @@ class IEEE754Value(BaseValue):
         except TypeError:
             self.value = value
 
-    def __bytes__(self):
-        # TODO
-        return ieee754_double_to_bytes(self.value)
+    # def __bytes__(self):
+    #     # TODO
+    #     return ieee754_double_to_bytes(self.value)
 
     def __str__(self):
         return bytes_to_hexstr(self.value, start='0x', sep='')
