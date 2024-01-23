@@ -40,11 +40,15 @@ class ParserSingleShort(ParserTestCase):
         self.parser = KLVParser(self.packet, key_length=1)
 
     def test_key(self):
-        key, value = next(self.parser)
+        key, _, _ = next(self.parser)
         self.assertEqual(key, self.key)
 
+    def test_length(self):
+        _, length, _ = next(self.parser)
+        self.assertEqual(length, self.length)
+
     def test_value(self):
-        key, value = next(self.parser)
+        _, _, value = next(self.parser)
         self.assertEqual(value, self.value)
 
 
@@ -66,11 +70,15 @@ class ParserSingleLong(ParserTestCase):
         self.parser = KLVParser(self.packet, key_length=16)
 
     def test_key(self):
-        key, value = next(self.parser)
+        key, _, _ = next(self.parser)
         self.assertEqual(key, self.key)
 
+    def test_length(self):
+        _, length, _ = next(self.parser)
+        self.assertEqual(length, self.length)
+
     def test_value(self):
-        key, value = next(self.parser)
+        _, _, value = next(self.parser)
         self.assertEqual(value, self.value)
 
 
