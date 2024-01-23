@@ -45,18 +45,21 @@ class KLVParser(object):
     def __next__(self):
         key = self.__read(self.key_length)
 
-        byte_length = bytes_to_int(self.__read(1))
+        bl_raw = self.__read(1)
+        byte_length = bytes_to_int(bl_raw)
 
         if byte_length < 128:
             # BER Short Form
+            sl_raw = b''
             length = byte_length
         else:
             # BER Long Form
-            length = bytes_to_int(self.__read(byte_length - 128))
+            sl_raw = self.__read(byte_length - 128)
+            length = bytes_to_int(sl_raw)
 
         value = self.__read(length)
 
-        return key, value
+        return key, bl_raw + sl_raw, value
 
     def __read(self, size):
         if size == 0:

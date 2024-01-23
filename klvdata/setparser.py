@@ -58,7 +58,7 @@ class SetParser(Element, metaclass=ABCMeta):
 
         If a known parser is not available for key, parse as generic KLV element.
         """
-        for key, value in KLVParser(self.value, self.key_length):
+        for key, _, value in KLVParser(self.value, self.key_length):
             try:
                 self.items[key] = self.parsers[key](value)
             except (KeyError, TypeError):

@@ -41,7 +41,7 @@ class StreamParser:
         return self
 
     def __next__(self):
-        key, value = next(self.iter_stream)
+        key, _, value = next(self.iter_stream)
 
         if key in self.parsers:
             return self.parsers[key](value)
