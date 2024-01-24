@@ -43,7 +43,18 @@ class KLVParser(object):
         return self
 
     def __next__(self):
-        key = self.__read(self.key_length)
+
+        # due to possible upstream meddling, the first 5-bytes of
+        # the 16-byte header might be missing from a UAS Local Set
+        if self.key_length == 16:
+            key = self.__read(11)
+            chopped = b'\x0B\x01\x01\x0E\x01\x03\x01\x01\x00\x00\x00'
+            if key == chopped:  # go humpty go!
+                key = b'\x06\x0E\x2B\x34\x02' + chopped
+            else:
+                key += self.__read(5)
+        else:
+            key = self.__read(self.key_length)
 
         bl_raw = self.__read(1)
         byte_length = bytes_to_int(bl_raw)
